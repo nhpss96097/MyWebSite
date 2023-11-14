@@ -2,12 +2,8 @@
   top: 8rem;
   position: relative;
   width: 60%;
-  /* background-color: rgb(186, 213, 255); */
   padding: 1rem;
   margin: 0 auto;
-  /* border: solid 1.7px black;
-  border-radius: 1rem; */
-
   border-top: solid 2px black;
 }
 
@@ -25,9 +21,7 @@
 }
 
 .titleText {
-  /* border: solid 1.7px rgb(40, 142, 244); */
   border: solid 1.7px black;
-  /* border-radius: 0.3rem; */
   width: 80%;
   position: relative;
   left: 50%;
@@ -99,6 +93,8 @@
 .modalOverlay {
   position: relative;
   transform: translateY(-50%);
+
+  margin: 0 auto;
 }
 
 .modalContent {
@@ -113,15 +109,20 @@
 .modalImg {
   border: solid 2px black;
   border-radius: 1rem;
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
-.modalButton {
+.modalButtonClose {
   background: none;
   border: 0;
   position: relative;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
-.modalButtonImg {
+.modalCloseButton {
   display: grid;
   position: relative;
   margin: 0 auto;
@@ -133,7 +134,34 @@
   margin-top: 0.5rem;
 }
 
-.modalButtonImg:hover {
+.modalCloseButton:hover {
+  background-color: rgb(249, 102, 126);
+  color: white;
+  cursor: pointer;
+}
+
+.modalButtonNext {
+  background: none;
+  border: 0;
+  position: relative;
+  display: grid;
+  align-items: center;
+  margin-left: 0.5rem;
+  grid-column-start: 3;
+  justify-content: right;
+}
+
+.modalNextButton {
+  display: grid;
+  position: relative;
+  align-items: center;
+  border: solid 2px;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.modalNextButton:hover {
   background-color: rgb(249, 102, 126);
   color: white;
   cursor: pointer;

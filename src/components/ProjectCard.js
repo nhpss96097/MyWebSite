@@ -1,5 +1,5 @@
 import styles from "@/styles/card.module.css";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ProjectCard({
@@ -7,9 +7,10 @@ export default function ProjectCard({
   description,
   Img,
   Link,
-  OriginImage,
+  OriginImages,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   function openModal() {
     setIsModalOpen(true);
@@ -18,6 +19,24 @@ export default function ProjectCard({
   function closeModal() {
     setIsModalOpen(false);
   }
+
+  function switchImg(direction) {
+    const lastIndex = OriginImages.length - 1;
+    let newIndex;
+
+    if (direction === "next") {
+      newIndex = currentImageIndex < lastIndex ? currentImageIndex + 1 : 0;
+    } else {
+      newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : lastIndex;
+    }
+
+    setCurrentImageIndex(newIndex);
+
+    if (direction !== "next") {
+      closeModal();
+    }
+  }
+
   return (
     <div>
       <section className={styles.card}>
@@ -31,7 +50,8 @@ export default function ProjectCard({
               src={Img}
               layout="responsive"
               alt="Picture"
-              width={200}
+              sizes="50vw"
+              width={400}
               height={220}
               className={styles.img}
               onClick={openModal}
@@ -53,18 +73,26 @@ export default function ProjectCard({
       </section>
 
       {isModalOpen && (
-        <div className={styles.modalOverlay} onClick={closeModal}>
+        <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
             <Image
-              src={OriginImage}
+              id="moadlImg"
+              src={OriginImages[currentImageIndex]}
               alt="Original Picture"
               layout="responsive"
               width={200}
               height={220}
               className={styles.modalImg}
+              onClick={closeModal}
             />
-            <button className={styles.modalButton}>
-              <div className={styles.modalButtonImg}>X</div>
+            <button className={styles.modalButtonNext}>
+              <div
+                className={styles.modalNextButton}
+                onClick={() => switchImg("next")}
+              >{`>`}</div>
+            </button>
+            <button className={styles.modalButtonClose} onClick={closeModal}>
+              <div className={styles.modalCloseButton}>X</div>
             </button>
           </div>
         </div>
