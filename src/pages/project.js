@@ -20,7 +20,7 @@ export default function project({}) {
       title: "圖片搜尋網站",
       description:
         "使用 React 作為前端框架，搭配 JavaScript 語法，並使用 Pexels 的 API 建立的圖片搜尋網站。其功能有：1.搜尋圖片、2.載入更多圖片、3.點開圖片下載",
-      Img: "/images/GalleryWebSite.png",
+      Img: "/images/GalleryWebSite-1.png",
       OriginImages: [
         "/images/GalleryWebSite-1.png",
         "/images/GalleryWebSite-2.png",
