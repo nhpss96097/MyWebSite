@@ -1,0 +1,39 @@
+.navul {
+  grid-template-columns: repeat(auto-fit);
+  font-size: 1.25rem;
+  list-style: none;
+  display: grid;
+  align-items: center;
+  /* border: solid 3px black; */
+  gap: 7.5rem;
+  text-align: center;
+  grid-auto-flow: column;
+  padding: 0.3rem;
+}
+
+.a {
+  color: black;
+  white-space: nowrap;
+  border: solid 2px black;
+  border-radius: 3px;
+  text-decoration: none;
+  /* padding-left: 5px;
+  padding-right: 5px; */
+  padding: 5px;
+}
+
+.a:hover {
+  color: rgb(249, 102, 126);
+}
+
+.activeLink {
+  color: black;
+  white-space: nowrap;
+  border: solid 2px black;
+  border-radius: 3px;
+  text-decoration: none;
+  /* padding-left: 5px;
+  padding-right: 5px; */
+  padding: 5px;
+  color: rgb(249, 102, 126);
+}
