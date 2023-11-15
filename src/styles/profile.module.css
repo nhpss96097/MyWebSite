@@ -47,7 +47,8 @@
   justify-self: center;
   text-align: center;
   position: relative;
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   gap: 0.5rem;
   height: auto;
   padding: 0.5rem;
@@ -57,9 +58,11 @@
 
 /* .specialtyImg {
   transition: 0.3s ease;
-}
+  width: 100px;
+  height: 100px;
+} */
 
-.specialtyImg:hover {
+/* .specialtyImg:hover {
   transform: scale(1.1);
 } */
 
