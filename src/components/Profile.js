@@ -81,13 +81,15 @@ export default function Profile({}) {
       <div id="img-profile" className={styles.imgProfile}>
         <section id="img" className={styles.myPicture}>
           <Image
-            src={""}
+            src={"/Icon/mypic.png"}
             alt="My picture"
             layout="responsive"
+            quality={100}
             width={200}
             height={220}
             className={""}
           />
+          <p className={styles.imgTitle}>古新弘</p>
         </section>
 
         <section id="profile" className={styles.profile}>

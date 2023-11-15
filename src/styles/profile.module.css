@@ -4,12 +4,17 @@
   margin-top: 9rem;
   width: 250px;
   height: 250px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }
 
 .imgProfile {
   display: flex;
   align-items: center;
+}
+
+.imgTitle {
+  text-align: center;
+  font-weight: bold;
 }
 
 /* -------------------------------- specialty ------------------------------- */
