@@ -2,22 +2,24 @@ import styles from "@/styles/contact.module.css";
 
 export default function ContactForm({}) {
   function submitHandler() {
+    document.getElementById("sub").click();
+
     const to = "nhpssoscar@gmail.com";
     const subject = "來自我的個人網站";
 
     const email = document.getElementById("emailText").value;
     const contact = document.getElementById("contactText").value;
 
-    if (!email || !contact) {
-      try {
-        const tip = document.getElementsByTagName("span");
-        tip[0].innerText = "請填寫 Email 或 Contact 內容！";
-      } catch (error) {
-        console.log(error);
-      }
+    const tip = document.getElementsByTagName("span");
 
+    if (!email || !contact) {
+      // tip[0].innerText = "請填寫 Email 或 Contact 內容！";
       return;
     }
+    // if (email && contact) {
+    //   tip[0].innerText = "";
+    // }
+
     const body = encodeURIComponent(contact + "\n\n\n" + "From：" + email);
     const mailToLink = `mailto:${to}?subject=${encodeURIComponent(
       subject
@@ -71,6 +73,14 @@ export default function ContactForm({}) {
         >
           送出訊息
         </button>
+
+        {/* 觸發 required 用 */}
+        <input
+          className={styles.displayButton}
+          type="submit"
+          id="sub"
+          value="submit"
+        />
       </form>
     </div>
   );
