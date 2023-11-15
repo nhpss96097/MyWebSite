@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 
 const name = "Shin";
 
-export default function header({ children, returnBack }) {
+export default function header({}) {
   return (
     <div className={styles.layout}>
       <Head>
@@ -17,12 +17,6 @@ export default function header({ children, returnBack }) {
         <h1 className={styles.h1}>{name}</h1>
         <NavBar />
       </header>
-
-      {returnBack && (
-        <Link href="/" className={styles.home}>
-          回到首頁
-        </Link>
-      )}
     </div>
   );
 }

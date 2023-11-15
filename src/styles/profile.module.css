@@ -1,0 +1,75 @@
+.myPicture {
+  position: relative;
+  left: 25%;
+  margin-top: 9rem;
+  width: 250px;
+  height: 250px;
+  background-color: aliceblue;
+}
+
+.imgProfile {
+  display: flex;
+  align-items: center;
+}
+
+/* -------------------------------- specialty ------------------------------- */
+.specialty {
+  /* background-color: antiquewhite; */
+  position: relative;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  align-items: center;
+}
+
+.specialtyTitle {
+  font-size: 1.3rem;
+  justify-self: left;
+  margin: 0.5rem;
+  border: solid 2px black;
+  text-align: center;
+  width: 25%;
+  position: relative;
+}
+
+.specialtyDiv {
+  justify-self: center;
+  text-align: center;
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  height: auto;
+  padding: 0.5rem;
+  /* border: solid 2px black; */
+  border-bottom: solid 2px black;
+}
+
+/* --------------------------------- profile -------------------------------- */
+.profile {
+  display: grid;
+  grid-template-rows: repeat(auto-fit);
+  position: relative;
+  margin: 0 auto;
+  margin-top: 9rem;
+  left: 15%;
+  width: 55%;
+}
+
+.profileTitle {
+  font-size: 1.3rem;
+  text-align: center;
+  border: solid 2px black;
+  width: 15%;
+  margin-bottom: 0.5rem;
+}
+
+.profileText {
+  font-size: 1.2rem;
+  /* border: solid 2px black; */
+  border-left: solid 2px black;
+  margin-left: 2rem;
+  padding: 0.5rem 2rem;
+  text-align: justify;
+}
