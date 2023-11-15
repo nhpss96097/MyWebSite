@@ -2,6 +2,8 @@ import styles from "@/styles/contact.module.css";
 
 export default function ContactForm({}) {
   function submitHandler() {
+    document.getElementById("sub").click();
+
     const to = "nhpssoscar@gmail.com";
     const subject = "來自我的個人網站";
 
@@ -71,6 +73,14 @@ export default function ContactForm({}) {
         >
           送出訊息
         </button>
+
+        {/* 觸發 required 用 */}
+        <input
+          className={styles.displayButton}
+          type="submit"
+          id="sub"
+          value="submit"
+        />
       </form>
     </div>
   );
