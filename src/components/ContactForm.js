@@ -2,23 +2,26 @@ import styles from "@/styles/contact.module.css";
 
 export default function ContactForm({}) {
   function submitHandler() {
-    document.getElementById("sub").click();
-
     const to = "nhpssoscar@gmail.com";
     const subject = "來自我的個人網站";
 
     const email = document.getElementById("emailText").value;
     const contact = document.getElementById("contactText").value;
 
-    const tip = document.getElementsByTagName("span");
+    const tip = document.querySelector(`.${styles.span}`);
 
     if (!email || !contact) {
-      tip[0].innerText = "請填寫 Email 或 Contact 內容！";
+      tip.innerText = "請填寫 Email 或 Contact 內容！";
       return;
     }
-    if (email && contact) {
-      tip[0].innerText = "";
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      tip.innerText = "請填寫正確的 Email 格式！";
+      return;
     }
+
+    tip.innerText = "";
 
     const body = encodeURIComponent(contact + "\n\n\n" + "From：" + email);
     const mailToLink = `mailto:${to}?subject=${encodeURIComponent(
@@ -28,6 +31,8 @@ export default function ContactForm({}) {
     const mailToElement = document.createElement("a");
     mailToElement.href = mailToLink;
     mailToElement.click();
+    document.getElementById("emailText").value = "";
+    document.getElementById("contactText").value = "";
   }
 
   return (
@@ -73,14 +78,6 @@ export default function ContactForm({}) {
         >
           送出訊息
         </button>
-
-        {/* 觸發 required 用 */}
-        <input
-          className={styles.displayButton}
-          type="submit"
-          id="sub"
-          value="submit"
-        />
       </form>
     </div>
   );
