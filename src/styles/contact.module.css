@@ -107,3 +107,8 @@
   cursor: pointer;
   color: white;
 }
+
+.span {
+  color: rgb(234, 102, 115);
+  font-weight: bold;
+}

@@ -9,6 +9,13 @@ export default function ContactForm({}) {
     const contact = document.getElementById("contactText").value;
 
     if (!email || !contact) {
+      try {
+        const tip = document.getElementsByTagName("span");
+        tip[0].innerText = "請填寫 Email 或 Contact 內容！";
+      } catch (error) {
+        console.log(error);
+      }
+
       return;
     }
     const body = encodeURIComponent(contact + "\n\n\n" + "From：" + email);
@@ -31,6 +38,7 @@ export default function ContactForm({}) {
       >
         <h3>歡迎聯絡，我的Email：</h3>
         <p className={styles.myEmail}>nhpssoscar@gmail.com</p>
+        <span className={styles.span}></span>
         <label htmlFor="email" className={styles.email}>
           Email
         </label>
@@ -54,7 +62,9 @@ export default function ContactForm({}) {
           placeholder="contact"
           required
         />
+
         <button
+          type="button"
           className={styles.button}
           onClick={submitHandler}
           alt="點擊開啟您的信箱軟體"
