@@ -4,7 +4,11 @@
   margin-top: 9rem;
   width: 250px;
   height: 250px;
-  /* background-color: aliceblue; */
+  transition: 0.3s ease;
+}
+
+.myPicture:hover {
+  transform: scale(1.1);
 }
 
 .imgProfile {
@@ -50,6 +54,14 @@
   /* border: solid 2px black; */
   border-bottom: solid 2px black;
 }
+
+/* .specialtyImg {
+  transition: 0.3s ease;
+}
+
+.specialtyImg:hover {
+  transform: scale(1.1);
+} */
 
 /* --------------------------------- profile -------------------------------- */
 .profile {

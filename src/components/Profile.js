@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/profile.module.css";
+import Link from "next/link";
 
 export default function Profile({}) {
   const specialtyImages = [
@@ -10,7 +11,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
     <Image
       src={"/Icon/HTML.png"}
@@ -19,7 +20,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
     <Image
       src={"/Icon/CSS.png"}
@@ -28,7 +29,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
     <Image
       src={"/Icon/JAVA.png"}
@@ -37,7 +38,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
     <Image
       src={"/Icon/PPT.png"}
@@ -55,7 +56,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
     <Image
       src={"/Icon/PR.png"}
@@ -64,7 +65,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
     <Image
       src={"/Icon/PS.png"}
@@ -73,7 +74,7 @@ export default function Profile({}) {
       sizes="50"
       width={50}
       height={50}
-      className={""}
+      className={styles.specialtyImg}
     />,
   ];
   return (
