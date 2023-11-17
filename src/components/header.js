@@ -15,8 +15,8 @@ export default function header({}) {
       </Head>
       <header className={styles.header}>
         <h1 className={styles.h1}>{name}</h1>
-        <NavBar />
       </header>
+      <NavBar />
     </div>
   );
 }

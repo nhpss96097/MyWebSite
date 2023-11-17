@@ -1,7 +1,9 @@
 .myPicture {
   position: relative;
   left: 25%;
-  margin-top: 9rem;
+  /* margin-top: 9rem; */
+  margin-top: 2rem;
+
   width: 250px;
   height: 250px;
   transition: 0.3s ease;
@@ -27,7 +29,7 @@
   position: relative;
   width: 40%;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit);
   align-items: center;
@@ -72,7 +74,8 @@
   grid-template-rows: repeat(auto-fit);
   position: relative;
   margin: 0 auto;
-  margin-top: 9rem;
+  /* margin-top: 9rem; */
+  margin-top: 2rem;
   left: 15%;
   width: 55%;
 }
@@ -92,6 +95,14 @@
   margin-left: 2rem;
   padding: 0.5rem 2rem;
   text-align: justify;
+}
+
+/* ----------------------------------- RWD ---------------------------------- */
+
+@media screen and (max-width: 1150px) {
+  .specialty {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 950px) {

@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fit);
   gap: 1.5rem;
   grid-auto-flow: row;
-  margin: 10rem auto;
+  margin: 2.5rem auto;
   text-align: center;
   justify-content: center;
 }

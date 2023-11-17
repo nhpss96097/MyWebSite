@@ -1,42 +1,120 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/navBar.module.css";
+import Image from "next/image";
+import { useState } from "react";
+import { images } from "../../next.config";
 
 export default function NavBar({}) {
   const router = useRouter();
+
+  const [openNavBar, setOpenNabBar] = useState(false);
+
+  function openModal() {
+    setOpenNabBar(true);
+  }
+
+  function closeModal() {
+    setOpenNabBar(false);
+  }
+
+  function toggleModal() {
+    setOpenNabBar(!openNavBar);
+  }
+
   return (
-    <nav>
-      <ul className={styles.navul}>
-        <Link
-          href="/"
-          className={router.pathname === "/" ? styles.activeLink : styles.a}
-        >
-          Home
-        </Link>
-        <Link
-          href="/project"
-          className={
-            router.pathname === "/project" ? styles.activeLink : styles.a
-          }
-        >
-          My Project
-        </Link>
-        <a
-          href="https://github.com/nhpss96097?tab=repositories"
-          target="_blank"
-          className={styles.a}
-        >
-          GitHub
-        </a>
-        <Link
-          href="/contact"
-          className={
-            router.pathname === "/contact" ? styles.activeLink : styles.a
-          }
-        >
-          Contact
-        </Link>
-      </ul>
-    </nav>
+    <div>
+      <nav>
+        <ul className={styles.navul}>
+          <Link
+            href="/"
+            className={router.pathname === "/" ? styles.activeLink : styles.a}
+          >
+            Home
+          </Link>
+          <Link
+            href="/project"
+            className={
+              router.pathname === "/project" ? styles.activeLink : styles.a
+            }
+          >
+            My Project
+          </Link>
+          <a
+            href="https://github.com/nhpss96097?tab=repositories"
+            target="_blank"
+            className={styles.a}
+          >
+            GitHub
+          </a>
+          <Link
+            href="/contact"
+            className={
+              router.pathname === "/contact" ? styles.activeLink : styles.a
+            }
+          >
+            Contact
+          </Link>
+        </ul>
+      </nav>
+
+      <nav>
+        <div className={styles.navButton}>
+          <Image
+            src={"/images/nav-button.png"}
+            alt="RWD nav img"
+            layout="responsive"
+            quality={100}
+            width={50}
+            height={50}
+            className={""}
+            onClick={toggleModal}
+          />
+        </div>
+        {openNavBar && (
+          <div className={styles.navModalDiv}>
+            <ul className={styles.navModalUl}>
+              <Link
+                href="/"
+                className={
+                  router.pathname === "/"
+                    ? styles.activeModalLink
+                    : styles.ModalLink
+                }
+              >
+                Home
+              </Link>
+              <Link
+                href="/project"
+                className={
+                  router.pathname === "/project"
+                    ? styles.activeModalLink
+                    : styles.ModalLink
+                }
+              >
+                My Project
+              </Link>
+              <a
+                href="https://github.com/nhpss96097?tab=repositories"
+                target="_blank"
+                className={styles.ModalLink}
+              >
+                GitHub
+              </a>
+              <Link
+                href="/contact"
+                className={
+                  router.pathname === "/contact"
+                    ? styles.activeModalLink
+                    : styles.ModalLink
+                }
+              >
+                Contact
+              </Link>
+            </ul>
+          </div>
+        )}
+      </nav>
+    </div>
   );
 }
