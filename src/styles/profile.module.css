@@ -93,3 +93,65 @@
   padding: 0.5rem 2rem;
   text-align: justify;
 }
+
+@media screen and (max-width: 950px) {
+  .profile,
+  .imgProfile,
+  .myPicture,
+  .specialty {
+    display: grid;
+    grid-template-rows: auto;
+    left: auto;
+    justify-self: center;
+  }
+
+  .profile,
+  .profileText,
+  .specialty {
+    margin-top: 3%;
+    text-align: left;
+  }
+
+  .specialty {
+    width: 50%;
+  }
+
+  .profileTitle {
+    margin-left: 2rem;
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .specialty {
+    width: 50%;
+  }
+
+  .specialtyDiv {
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .specialtyTitle {
+    margin: 0 auto 2%;
+  }
+
+  .profileTitle {
+    margin: 8% auto 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .profileTitle {
+    margin: 8% 0 2% 0;
+    width: 25%;
+    justify-self: center;
+  }
+  .profileText {
+    margin: 0;
+    width: 100%;
+  }
+
+  .specialty {
+    width: 60%;
+  }
+}
