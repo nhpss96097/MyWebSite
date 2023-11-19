@@ -104,7 +104,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 }
 
 .modalContent {
@@ -177,4 +177,42 @@
   background-color: rgb(249, 102, 126);
   color: white;
   cursor: pointer;
+}
+
+/* ----------------------------------- RWD ---------------------------------- */
+
+@media screen and (max-width: 870px) {
+  .imgTitle {
+    grid-template-columns: none;
+  }
+  .cardImg {
+    grid-template-columns: none;
+  }
+  .p {
+    text-align: left;
+  }
+  .cardatag {
+    grid-template-columns: none;
+  }
+  .githublink {
+    width: 50%;
+  }
+
+  .modalContent {
+    width: 100%;
+    bottom: 10%;
+    grid-template-rows: none;
+  }
+
+  .modalButtonClose {
+    grid-row-start: 2;
+    margin: 0 auto;
+    width: 40px;
+  }
+
+  .modalButtonNext {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin-right: 2rem;
+  }
 }
