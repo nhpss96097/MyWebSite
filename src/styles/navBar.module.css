@@ -56,7 +56,7 @@
 }
 
 .navModalUl {
-  margin-bottom: 45%;
+  /* margin-bottom: 45%; */
   font-size: 1.25rem;
   list-style: none;
   display: grid;

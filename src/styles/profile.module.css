@@ -165,4 +165,8 @@
   .specialty {
     width: 60%;
   }
+
+  .myPicture:hover {
+    transform: none;
+  }
 }
