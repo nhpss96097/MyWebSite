@@ -54,6 +54,7 @@ export default function ProjectCard({
               height={220}
               className={styles.img}
               onClick={openModal}
+              priority={true}
             />
             <ul className={styles.ulList}>
               {descriptionArray.map((item, index) => (
@@ -95,6 +96,7 @@ export default function ProjectCard({
               height={220}
               className={styles.modalImg}
               onClick={closeModal}
+              priority={true}
             />
             <button className={styles.modalButtonNext}>
               <div
