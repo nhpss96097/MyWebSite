@@ -55,7 +55,6 @@ export default function ProjectCard({
               className={styles.img}
               onClick={openModal}
               priority={true}
-              placeholder="圖片載入中"
             />
             <ul className={styles.ulList}>
               {descriptionArray.map((item, index) => (
@@ -98,7 +97,6 @@ export default function ProjectCard({
               className={styles.modalImg}
               onClick={closeModal}
               priority={true}
-              placeholder="圖片載入中"
             />
             <button className={styles.modalButtonNext}>
               <div
