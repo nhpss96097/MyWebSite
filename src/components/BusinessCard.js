@@ -1,12 +1,13 @@
 import styles from "@/styles/card.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-export default function ProjectCard({
+export default function BusinessCard({
   title,
   description,
+  price,
   Img,
-  Link,
   OriginImages,
 }) {
   const descriptionArray = description.split("\n");
@@ -33,50 +34,44 @@ export default function ProjectCard({
 
     setCurrentImageIndex(newIndex);
   }
-
   return (
-    <div>
-      <section className={styles.card}>
-        <ul className={styles.ul}>
-          <li className={styles.imgTitle}>
-            <h3 className={styles.titleText} alt="title">
-              {title}
-            </h3>
-          </li>
+    <section className={styles.card}>
+      <ul className={styles.ul}>
+        <li className={styles.imgTitle}>
+          <h3 className={styles.titleText} alt="title">
+            {title}
+          </h3>
+        </li>
 
-          <li className={styles.cardImg}>
-            <Image
-              src={Img}
-              layout="responsive"
-              alt="Picture"
-              sizes="50vw"
-              width={400}
-              height={220}
-              className={styles.img}
-              onClick={openModal}
-            />
-            <ul className={styles.ulList}>
-              {descriptionArray.map((item, index) => (
-                <li key={index} className={styles.p}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </li>
+        <li className={styles.cardImg}>
+          <Image
+            src={Img}
+            layout="responsive"
+            alt="Picture"
+            sizes="50vw"
+            width={400}
+            height={220}
+            className={styles.img}
+            onClick={openModal}
+          />
+          <ul className={styles.ulList}>
+            {descriptionArray.map((item, index) => (
+              <li key={index} className={styles.p}>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className={styles.price} alt="price">
+            {price}
+          </p>
+        </li>
 
-          <li className={styles.cardatag}>
-            <a
-              href={Link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.githublink}
-            >
-              GitHub
-            </a>
-          </li>
-        </ul>
-      </section>
-
+        <li className={styles.cardatag}>
+          <Link href="/contact" className={styles.githublink}>
+            Contact me
+          </Link>
+        </li>
+      </ul>
       {isModalOpen && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
@@ -87,7 +82,7 @@ export default function ProjectCard({
               >{`<`}</div>
             </button>
             <Image
-              id="moadlImg"
+              id="modalImg"
               src={OriginImages[currentImageIndex]}
               alt="Original Picture"
               layout="responsive"
@@ -102,12 +97,13 @@ export default function ProjectCard({
                 onClick={() => switchImg("next")}
               >{`>`}</div>
             </button>
+
             <button className={styles.modalButtonClose} onClick={closeModal}>
               <div className={styles.modalCloseButton}>X</div>
             </button>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

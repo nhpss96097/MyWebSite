@@ -48,6 +48,14 @@ export default function NavBar({}) {
             GitHub
           </a>
           <Link
+            href="/business"
+            className={
+              router.pathname === "/business" ? styles.activeLink : styles.a
+            }
+          >
+            Business
+          </Link>
+          <Link
             href="/contact"
             className={
               router.pathname === "/contact" ? styles.activeLink : styles.a
@@ -73,7 +81,7 @@ export default function NavBar({}) {
         </div>
         {openNavBar && (
           <div className={styles.navModalDiv}>
-            <ul className={styles.navModalUl}>
+            <ul className={styles.navModalUl} onClick={toggleModal}>
               <Link
                 href="/"
                 className={
@@ -101,6 +109,16 @@ export default function NavBar({}) {
               >
                 GitHub
               </a>
+              <Link
+                href="/business"
+                className={
+                  router.pathname === "/business"
+                    ? styles.activeModalLink
+                    : styles.ModalLink
+                }
+              >
+                Business
+              </Link>
               <Link
                 href="/contact"
                 className={
