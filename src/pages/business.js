@@ -5,7 +5,7 @@ export default function business({}) {
       title: "個人網站製作",
       description:
         "幫你做個人網站，可用於履歷、社交等。\n價錢計算：\n1.內容難度\n2.時限要求\n3.要求內容量",
-      price: "NTD：1500 元起",
+      price: "NTD：2500 元起",
       Img: "/Business/website-1.png",
       OriginImages: ["/Business/website-2.png"],
     },
@@ -13,7 +13,7 @@ export default function business({}) {
       title: "影片剪輯",
       description:
         "幫你剪輯影片，上簡單特效、轉場、字幕等。\n價錢計算：\n1.內容難度\n2.時限要求\n3.要求內容量",
-      price: "NTD：1500 元起",
+      price: "NTD：2000 元起",
       Img: "/Business/videoClip-1.png",
       OriginImages: ["/Business/videoClip-1.png"],
     },
