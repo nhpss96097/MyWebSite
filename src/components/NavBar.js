@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/navBar.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { images } from "../../next.config";
 
 export default function NavBar({}) {
@@ -21,6 +21,18 @@ export default function NavBar({}) {
   function toggleModal() {
     setOpenNabBar(!openNavBar);
   }
+
+  useEffect(() => {
+    if (openNavBar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [openNavBar]);
 
   return (
     <div>

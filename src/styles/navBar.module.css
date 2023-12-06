@@ -56,7 +56,8 @@
 }
 
 .navModalUl {
-  margin-top: 10%;
+  margin-top: 15%;
+  position: sticky;
   /* margin-bottom: 45%; */
   font-size: 1.25rem;
   list-style: none;
@@ -101,7 +102,7 @@
   /* left: 50%;
   transform: translateX(-50%); */
 
-  position: relative;
+  position: sticky;
   z-index: 2;
 }
 .navButton:hover {
