@@ -111,6 +111,21 @@
   font-weight: bold;
 }
 
+/* .otherContacts {
+  transform: translateY(-25%);
+}
+
+.otherContactsText {
+  text-align: center;
+}
+.otherContactsImg {
+  display: flex;
+  position: relative;
+  margin: 10px auto;
+  width: 10rem;
+  height: auto;
+} */
+
 @media screen and (max-width: 450px) {
   .myEmail {
     width: 100%;

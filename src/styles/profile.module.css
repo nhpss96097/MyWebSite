@@ -38,7 +38,7 @@
 .specialtyTitle {
   font-size: 1.3rem;
   justify-self: left;
-  margin: 0.5rem;
+  margin: 1rem 0.5rem;
   border: solid 2px black;
   text-align: center;
   width: 25%;
@@ -47,6 +47,7 @@
 
 .specialtyDiv {
   justify-self: center;
+  align-items: center;
   text-align: center;
   position: relative;
   display: grid;
@@ -58,15 +59,29 @@
   border-bottom: solid 2px black;
 }
 
-/* .specialtyImg {
+.specialtyImg {
   transition: 0.3s ease;
-  width: 100px;
-  height: 100px;
-} */
+  /* width: 50px;
+  height: 50px; */
+}
 
-/* .specialtyImg:hover {
+.specialtyImg:hover {
   transform: scale(1.1);
-} */
+}
+
+.specialtyImg::after {
+  content: attr(img-text);
+  position: absolute;
+  left: 50%;
+  bottom: 80%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.specialtyImg:hover::after {
+  opacity: 1;
+}
 
 /* --------------------------------- profile -------------------------------- */
 .profile {
@@ -101,7 +116,7 @@
 
 @media screen and (max-width: 1150px) {
   .specialty {
-    width: 50%;
+    width: 60%;
   }
 }
 
@@ -124,7 +139,7 @@
   }
 
   .specialty {
-    width: 50%;
+    width: 65%;
   }
 
   .profileTitle {
@@ -167,6 +182,10 @@
   }
 
   .myPicture:hover {
+    transform: none;
+  }
+
+  .specialtyImg:hover {
     transform: none;
   }
 }
